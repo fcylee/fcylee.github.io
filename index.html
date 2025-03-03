@@ -28,6 +28,15 @@
             --bg-color: #1a1a1a;
             --text-color: #f4f4f4;
         }
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+            background: #007bff;
+            color: white;
+        }
         .container {
             text-align: center;
             padding: 20px;
@@ -151,16 +160,17 @@
     </style>
 </head>
 <body>
+    <header>
+        <div class="nav">
+            <button onclick="showSection('about')">About Me</button>
+            <button onclick="showSection('research')">Research Interests</button>
+            <button onclick="showSection('publications')">Publications</button>
+        </div>
+    </header>
     <div class="container">
         <h1>Local RNA metabolism meets synapse (dys)function</h1>
         <h2>Flora Lee's Scientific Home Page</h2>
         <p>website under construction</p>
-    </div>
-
-    <div class="nav">
-        <button onclick="showSection('about')">About Me</button>
-        <button onclick="showSection('research')">Research Interests</button>
-        <button onclick="showSection('publications')">Publications</button>
     </div>
 
     <section id="research" class="active">
