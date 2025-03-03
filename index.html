@@ -60,49 +60,66 @@
         .active {
             display: block;
         }
-        .photo-container {
+        
+        .about-container {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            margin-top: 20px;
+            justify-content: flex-start;
+            gap: 20px;
         }
-        .photo-container img {
+        .photo-container {
+            position: relative;
             width: 200px;
             height: 200px;
             border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.2), inset -4px -4px 10px rgba(255, 255, 255, 0.5);
+        }
+        .photo-container img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            transition: opacity 0.5s ease-in-out;
         }
         .photo-buttons {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
             display: flex;
-            gap: 10px;
-            margin-top: 10px;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            width: 100%;
+            padding: 0 10px;
         }
         .photo-buttons button {
-            padding: 5px 10px;
+            background: none;
             border: none;
-            background: #007bff;
-            color: white;
+            font-size: 20px;
+            color: rgba(0, 0, 0, 0.3);
             cursor: pointer;
-            border-radius: 5px;
         }
         .photo-buttons button:hover {
-            background: #0056b3;
+            color: rgba(0, 0, 0, 0.6);
         }
         .photo-indicators {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
             gap: 5px;
-            margin-top: 10px;
         }
         .photo-indicators span {
-            width: 10px;
-            height: 10px;
-            background: #ccc;
+            width: 8px;
+            height: 8px;
+            background: rgba(0, 0, 0, 0.2);
             border-radius: 50%;
-            display: inline-block;
         }
         .photo-indicators .active {
-            background: #007bff;
+            background: rgba(0, 0, 0, 0.6);
         }
         .social-links a {
             margin: 0 10px;
