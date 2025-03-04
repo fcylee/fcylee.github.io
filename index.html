@@ -132,6 +132,21 @@
         .photo-indicators .active {
             background: rgba(0, 0, 0, 0.6);
         }
+        .research-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .research-box {
+            flex: 1 1 300px;
+            max-width: 300px;
+            padding: 20px;
+            border-radius: 20px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
         .social-links a {
             margin: 0 10px;
             text-decoration: none;
@@ -177,10 +192,21 @@
 
     <section id="research" class="active">
         <h2>Research Interests</h2>
-        <p> My current research combines long-standing interests in RNA biology and developmental neurobiology, funded by my Wellcome Trust Early Career Award and sponsored by the <a href="https://www.kcl.ac.uk/people/laura-andreae" target="_blank">Andreae</a> Lab. </p> 
-        <h3>Molecular neighbourhoods of localised mRNAs and their regulatory code</h3>
-        <h3>Methodologies for studying mRNP assembly principles</h3>
-        <h3>Convergent synaptic mRNA signatures in neurodevelopmental disorder risk gene models</h3>
+        <p> My current research combines long-standing interests in RNA biology and developmental neurobiology, funded by my Wellcome Trust Early Career Award and sponsored by the <a href="https://www.kcl.ac.uk/people/laura-andreae" target="_blank">Andreae</a> Lab. </p>
+        <div class="research-container">
+            <div class="research-box">
+                <h3>Molecular neighbourhoods of localised mRNAs and their regulatory code</h3>
+                <p>.</p>
+            </div>
+            <div class="research-box">
+                <h3>Methodologies for studying mRNP assembly principles</h3>
+                <p>.</p>
+            </div>
+            <div class="research-box">
+                <h3>Convergent synaptic mRNA signatures in neurodevelopmental disorder risk gene models</h3>
+                <p>.</p>
+            </div>
+        </div> 
         <div class="collab">
             <p>Ongoing Collaborations:</p>
             <p><a href="https://profiles.ucl.ac.uk/56783-anob-chakrabarti" target="_blank">Dr. Anob Chakrabarti</a></p>
