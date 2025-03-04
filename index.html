@@ -304,6 +304,8 @@
     <section id="publications">
         <h2>Publications</h2>
         <p>Full publication list can be found here: <a href="https://scholar.google.com/citations?user=xcTS8NkAAAAJ&hl=en" target="_blank">Google Scholar</a></p>
+        <h3>Highlights</h3>
+        <ul id="publications-list"></ul>
     </section>
 
     <footer>
@@ -349,6 +351,26 @@
             photoIndex = (photoIndex + 1) % photos.length;
             updatePhotoDisplay();
         }
+        async function loadPublications() {
+        try {
+            const response = await fetch('publications.json');
+            const publications = await response.json();
+            const pubList = document.getElementById("publications-list");
+            pubList.innerHTML = "";
+
+            publications.forEach(pub => {
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `<strong>${pub.title}</strong><br>
+                                      ${pub.authors}<br>
+                                      ${pub.journal}<br>
+                                      <a href="${pub.doi}" target="_blank">DOI Link</a>`;
+                pubList.appendChild(listItem);
+            });
+        } catch (error) {
+            console.error("Error loading publications:", error);
+        }
+    }
+    document.addEventListener("DOMContentLoaded", loadPublications);
     </script>
 </body>
 </html>
