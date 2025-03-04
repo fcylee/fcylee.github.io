@@ -30,19 +30,22 @@
         .dark-mode {
             --bg-color: #1a1a1a;
             --text-color: #f4f4f4;
-        }
+        }        
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            padding: 0px;
-            background: #42A4A1;
+            padding: 10px 20px;
+            background: #007bff;
             color: white;
             z-index: 1000;
+        }
+        .logo {
+            height: 40px;
         }
         .container {
             text-align: center;
@@ -76,7 +79,6 @@
         .active {
             display: block;
         }
-        
         .about-container {
             display: flex;
             align-items: center;
@@ -218,6 +220,9 @@
 </head>
 <body>
     <header>
+        <div>
+            <img src="images/logo.png" alt="Logo" class="logo">
+        </div>
         <div class="nav">
             <button onclick="showSection('about')">About Me</button>
             <button onclick="showSection('research')">Research Interests</button>
