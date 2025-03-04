@@ -79,6 +79,10 @@
             justify-content: flex-start;
             gap: 20px;
         }
+        .about-text {
+            flex: 1;
+            max-width: 400px;
+        }
         .photo-container {
             position: relative;
             width: 200px;
@@ -132,21 +136,44 @@
         .photo-indicators .active {
             background: rgba(0, 0, 0, 0.6);
         }
-        .research-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
         .research-box {
-            flex: 1 1 300px;
-            max-width: 300px;
-            padding: 20px;
+            position: relative;
+            width: 300px;
+            height: 200px;
             border-radius: 20px;
-            background: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            color: white;
+            font-weight: bold;
+            padding: 20px;
+            background-size: cover;
+            background-position: center;
         }
+        .research-box h3, .research-box p {
+            position: relative;
+            z-index: 2;
+        }
+        .research-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .research-container {
+                flex-direction: column;
+            }
         .social-links a {
             margin: 0 10px;
             text-decoration: none;
@@ -217,24 +244,28 @@
         
     </section>
 
-        <section id="about">
+    <section id="about">
         <h2>About Me</h2>
-        <div class="photo-container">
-            <img id="profile-photo" src="images/flora_1.jpg" alt="">
-            <div class="photo-buttons">
-                <button onclick="prevPhoto()">&#9664;</button>
-                <button onclick="nextPhoto()">&#9654;</button>
+        <div class="about-container">
+            <div class="photo-container">
+                <img id="profile-photo" src="images/flora_1.jpg" alt="">
+                <div class="photo-buttons">
+                    <button onclick="prevPhoto()">&#9664;</button>
+                    <button onclick="nextPhoto()">&#9654;</button>
+                </div>
+                <div class="photo-indicators">
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-            <div class="photo-indicators">
-                <span class="active"></span>
-                <span></span>
-                <span></span>
+            <div class="about-text">
+                <p>Flora grew up in Hong Kong and Canada, and arrived in the United Kingdom at 17 for undergraduate studies (BA Natural Sciences). Her first interdisciplinary research experience was in the lab of Prof. Christine Holt at Cambridge during her third year project, where she looked at a miRNA important in axon guidance. Moving to London, Flora was a Wellcome Trust Neuroscience PhD student at University College London and The Francis Crick Institute under the mentorship of Prof. Jernej Ule. </p>
+                <p>Flora is currently pursuing her fellowship project sponsored by Prof. Laura Andreae in the MRC Centre of Neurodevleopmental Disorders, King's College London.</p>
+                <p>She enjoys going to concerts, trying new restaurants, watching youtube videos for recipe inspirations and strives to stay free of back/hip/knee/ankle pain by keeping up with exercise.</p>
+                <p>Email: flora_chi_yan.lee(at)kcl.ac.uk</p>
             </div>
         </div>
-        <p>Flora grew up in Hong Kong and Canada, and arrived in the United Kingdom at 17 for undergraduate studies (BA Natural Sciences). Her first interdisciplinary research experience was in the lab of Prof. Christine Holt at Cambridge during her third year project, where she looked at a miRNA important in axon guidance. Moving to London, Flora was a Wellcome Trust Neuroscience PhD student at University College London and The Francis Crick Institute under the mentorship of Prof. Jernej Ule. </p>
-        <p>Flora is currently pursuing her fellowship project sponsored by Prof. Laura Andreae in the MRC Centre of Neurodevleopmental Disorders, King's College London.</p>
-        <p>She enjoys going to concerts, trying new restaurants, watching youtube videos for recipe inspirations and strives to stay free of back/hip/knee/ankle pain by keeping up with exercise.</p>
-        <p>Email: flora_chi_yan.lee(at)kcl.ac.uk</p>
         <div class="social-links">
             <p>Connect with me:</p>
             <a href="https://www.linkedin.com/in/floracylee/" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
