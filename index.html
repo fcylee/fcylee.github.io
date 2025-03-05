@@ -48,17 +48,17 @@
             padding: 10px 20px;
             background: #42A4A1; /* Restored original greenish-blue color */
             color: white;
-            height: 60px;
+            height: 50px;
             z-index: 1000;
         }
         .logo-container {
             position: absolute;
-            left: 20px;
+            left: 50px;
             top: 50%;
             transform: translateY(-50%);
         }
         .logo {
-            height: 40px;
+            height: 50px;
         }
         .nav {
             display: flex;
@@ -76,32 +76,33 @@
         .nav button:hover {
             background: #147572;
         }
+        /* Hamburger menu button */
         .menu-toggle {
             display: none;
             background: none;
             border: none;
-            font-size: 24px;
+            font-size: 36px;
             cursor: pointer;
             color: white;
             position: absolute;
-            right: 20px;
+            right: 50px;
             top: 50%;
             transform: translateY(-50%);
         }
-        .nav.mobile {
+        /* Mobile menu dropdown */
+        .mobile-menu {
             display: none;
             flex-direction: column;
             position: absolute;
-            top: 0; 
-            right: 0;
-            height: 60px;
+            top: 50px; 
+            left: 0;
+            width: 100%;
             background: #42A4A1;
-            border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 10px;
-            transition: 0.3s ease-in-out;
+            text-align: center;
+            padding: 10px 0;
         }
-        .nav.mobile button {
+        .mobile-menu button {
             display: block;
             width: 100%;
             padding: 10px 20px;
@@ -111,7 +112,7 @@
             color: white;
             font-size: 16px
         }
-        .nav.mobile button:hover {
+        .mobile-menu button:hover {
             background: #147572;
         }
         section {
@@ -228,17 +229,14 @@
         }
         @media (max-width: 768px) {
             .nav {
-                display: none; 
+                display: none; /* Hide normal nav */
             }
             .menu-toggle {
-                display: block; 
-            }
-            .nav.mobile {
-                display: flex;
+                display: block; /* Show hamburger button */
             }
             .about-container {
                 flex-direction: column;
-                text-align: center;
+                text-align: left;
             }
             .research-container {
                 flex-direction: column;
@@ -283,7 +281,12 @@
             <button onclick="showSection('research')">Research Interests</button>
             <button onclick="showSection('publications')">Publications</button>
         </div>
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <div id="mobile-menu" class="mobile-menu">
+            <button onclick="showSection('about'); toggleMenu()">About Me</button>
+            <button onclick="showSection('research'); toggleMenu()">Research Interests</button>
+            <button onclick="showSection('publications'); toggleMenu()">Publications</button>
+        </div>
     </header>
     <div class="container">
         <h1>Local RNA metabolism meets synapse (dys)function</h1>
@@ -369,6 +372,7 @@
     </footer>
 
     <script>
+        /*
         function toggleMenu() {
             const nav = document.getElementById("nav-links");
             nav.classList.toggle("mobile");
@@ -380,7 +384,18 @@
             nav.classList.remove("mobile"); // Reset to normal layout on large screens
             }
         }
+        */
+        function toggleMenu() {
+            const menu = document.getElementById("mobile-menu");
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        }
 
+        function handleResize() {
+            const menu = document.getElementById("mobile-menu");
+            if (window.innerWidth > 768) {
+                menu.style.display = "none"; // Hide dropdown when resizing back
+            }
+        }
         function toggleTheme() {
             document.body.classList.toggle("dark-mode");
         }
