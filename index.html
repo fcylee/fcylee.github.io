@@ -48,6 +48,7 @@
             padding: 10px 20px;
             background: #42A4A1; /* Restored original greenish-blue color */
             color: white;
+            height: 60px;
             z-index: 1000;
         }
         .logo-container {
@@ -91,21 +92,24 @@
             display: none;
             flex-direction: column;
             position: absolute;
-            top: 60px;
-            right: 20px;
+            top: 0; 
+            right: 0;
+            height: 60px;
             background: #42A4A1;
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 10px;
+            transition: 0.3s ease-in-out;
         }
         .nav.mobile button {
             display: block;
             width: 100%;
-            padding: 10px;
+            padding: 10px 20px;
             text-align: left;
             border: none;
             background: #42A4A1;
             color: white;
+            font-size: 16px
         }
         .nav.mobile button:hover {
             background: #147572;
@@ -366,9 +370,17 @@
 
     <script>
         function toggleMenu() {
-        const nav = document.getElementById("nav-links");
-        nav.classList.toggle("mobile");
+            const nav = document.getElementById("nav-links");
+            nav.classList.toggle("mobile");
         }
+
+        function handleResize() {
+            const nav = document.getElementById("nav-links");
+            if (window.innerWidth > 768) {
+            nav.classList.remove("mobile"); // Reset to normal layout on large screens
+            }
+        }
+
         function toggleTheme() {
             document.body.classList.toggle("dark-mode");
         }
@@ -435,7 +447,7 @@
             console.error("Error loading publications:", error);
         }
     }
-
+    window.addEventListener("resize", handleResize);
     document.addEventListener("DOMContentLoaded", loadPublications);
     </script>
 </body>
