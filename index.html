@@ -13,7 +13,7 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="styles.css">
     <script src="/scripts.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bibtex-parse-js/1.0.12/bibtexParse.js" defer></script>
+    <script src="/bibtexParse.js" defer></script>
 </head>
 <body>
     <header id="header"></header>
@@ -26,19 +26,6 @@
     <footer id="footer"></footer>
 
     <script>
-        /*
-        function toggleMenu() {
-            const nav = document.getElementById("nav-links");
-            nav.classList.toggle("mobile");
-        }
-
-        function handleResize() {
-            const nav = document.getElementById("nav-links");
-            if (window.innerWidth > 768) {
-            nav.classList.remove("mobile"); // Reset to normal layout on large screens
-            }
-        }
-        */
         function loadHTML(file, elementId) {
             fetch(file)
                 .then(response => response.text())
@@ -91,7 +78,7 @@
         try {
             const response = await fetch('publications.bib');
             const bibtexText = await response.text();
-            const publications = BibtexParser.toJSON(bibtexText);
+            const publications = BibtexParse.toJSON(bibtexText);
             const pubList = document.getElementById("publications-list");
 
             pubList.innerHTML = ""; // Clear previous content
@@ -123,6 +110,7 @@
         }
     }
     window.addEventListener("resize", handleResize);
+    document.addEventListener("DOMContentLoaded", loadPublications);
     </script>
 </body>
 </html>
