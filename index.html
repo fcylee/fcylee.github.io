@@ -431,7 +431,7 @@
         try {
             const response = await fetch('publications.bib');
             const bibtexText = await response.text();
-            const publications = bibtexParse.toJSON(bibtexText);
+            const publications = BibtexParser.toJSON(bibtexText);
             const pubList = document.getElementById("publications-list");
 
             pubList.innerHTML = ""; // Clear previous content
