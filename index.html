@@ -12,25 +12,11 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="styles.css">
+    <script defer src="/scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bibtex-parse-js/1.0.12/bibtexParse.js"></script>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="images/logo.png" alt="Logo" class="logo">
-        </div>
-        <div class="nav" id="nav-links">
-            <button onclick="showSection('about')">About Me</button>
-            <button onclick="showSection('research')">Research Interests</button>
-            <button onclick="showSection('publications')">Publications</button>
-        </div>
-        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
-        <div id="mobile-menu" class="mobile-menu">
-            <button onclick="showSection('about'); toggleMenu()">About Me</button>
-            <button onclick="showSection('research'); toggleMenu()">Research Interests</button>
-            <button onclick="showSection('publications'); toggleMenu()">Publications</button>
-        </div>
-    </header>
+    <header id="header"></header>
     <div class="container">
         <h1>Local RNA metabolism meets synapse (dys)function</h1>
         <h2>Flora Lee's Scientific Home Page</h2>
@@ -103,16 +89,7 @@
         <ul id="publications-list"></ul>
     </section>
 
-    <footer>
-        &copy; 2025 Flora Chi Yan Lee. All Rights Reserved.
-        <div class="footer-social-links">
-            <a href="https://www.linkedin.com/in/floracylee/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://x.com/fcylee" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-            <a href="https://scholar.google.com/citations?user=xcTS8NkAAAAJ&hl=en" target="_blank"><i class="fa-brands fa-google-scholar"></i></a>
-            <a href="https://devneuro.org/cdn/people-detail.php?personID=2335" target="_blank"><i class="fa-solid fa-briefcase"></i></a>
-        </div>
-        <button onclick="toggleTheme()">Toggle Dark Mode</button>
-    </footer>
+    <footer id="footer"></footer>
 
     <script>
         /*
