@@ -75,40 +75,40 @@
             updatePhotoDisplay();
         }
         async function loadPublications() {
-        try {
-            const response = await fetch('publications.bib');
-            const bibtexText = await response.text();
-            const publications = BibtexParse.toJSON(bibtexText);
-            const pubList = document.getElementById("publications-list");
+            try {
+                const response = await fetch('publications.bib');
+                const bibtexText = await response.text();
+                const publications = BibtexParse.toJSON(bibtexText);
+                const pubList = document.getElementById("publications-list");
 
-            pubList.innerHTML = ""; // Clear previous content
+                pubList.innerHTML = ""; // Clear previous content
 
-            publications.forEach(pub => {
-                const entry = pub.entryTags;
-                const listItem = document.createElement("li");
+                publications.forEach(pub => {
+                    const entry = pub.entryTags;
+                    const listItem = document.createElement("li");
 
-                // Extract relevant fields
-                const title = entry.title || "Untitled";
-                const authors = entry.author || "Unknown Authors";
-                const year = entry.year ? `(${entry.year})` : "";
-                const journal = entry.journal || entry.booktitle || "No journal/conference";
-                const doi = entry.doi ? `<a href="https://doi.org/${entry.doi}" target="_blank">DOI</a>` : "";
-                const url = entry.url ? `<a href="${entry.url}" target="_blank">Full Text</a>` : "";
+                    // Extract relevant fields
+                    const title = entry.title || "Untitled";
+                    const authors = entry.author || "Unknown Authors";
+                    const year = entry.year ? `(${entry.year})` : "";
+                    const journal = entry.journal || entry.booktitle || "No journal/conference";
+                    const doi = entry.doi ? `<a href="https://doi.org/${entry.doi}" target="_blank">DOI</a>` : "";
+                    const url = entry.url ? `<a href="${entry.url}" target="_blank">Full Text</a>` : "";
 
-                // Format the publication entry
-                listItem.innerHTML = `
-                    <strong>${title}</strong> <br>
-                    ${authors} ${year} <br>
-                    <em>${journal}</em> <br>
-                    ${doi} ${url}
-                `;
+                    // Format the publication entry
+                    listItem.innerHTML = `
+                        <strong>${title}</strong> <br>
+                        ${authors} ${year} <br>
+                        <em>${journal}</em> <br>
+                        ${doi} ${url}
+                    `;
 
-                pubList.appendChild(listItem);
-            });
-        } catch (error) {
-            console.error("Error loading publications:", error);
+                    pubList.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error("Error loading publications:", error);
+            }
         }
-    }
     window.addEventListener("resize", handleResize);
     document.addEventListener("DOMContentLoaded", loadPublications);
     </script>
