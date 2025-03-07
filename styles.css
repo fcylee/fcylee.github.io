@@ -120,6 +120,9 @@ section button {
     right: 10px;
     z-index: 2;
 }
+section button:hover {
+    color: rgba(0, 0, 0, 0.6);
+}
 .active {
     display: block;
 }
@@ -230,8 +233,13 @@ section button {
     font-size: 16px;
     color: rgba(0, 0, 0, 0.3);
     cursor: pointer;
-    position: relative;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
     z-index: 2;
+}
+.research-box button:hover {
+    color: rgba(0, 0, 0, 0.6);
 }
 @media (max-width: 768px) {
     .nav {
