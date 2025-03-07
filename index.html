@@ -48,12 +48,11 @@
         }
 
         function showSection(sectionId) {
-            document.querySelectorAll("section").forEach(section => {
-                section.classList.remove("active");
-            });
             document.getElementById(sectionId).classList.add("active");
         }
-
+        function hideSection(sectionId) {
+            document.getElementById(sectionId).classList.remove("active");
+        }
         const photos = ["images/flora_1.jpg", "images/flora_2.jpg", "images/flora_3.jpg"];
         let photoIndex = 0;
 
