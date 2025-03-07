@@ -155,8 +155,7 @@ section button:hover {
 .photo-buttons {
     position: absolute;
     top: 50%;
-    left: 5%;
-    right: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
