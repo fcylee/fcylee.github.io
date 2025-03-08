@@ -126,6 +126,9 @@ section button:hover {
 .active {
     display: block;
 }
+.hide {
+    display: none;
+}
 .about-container {
     display: flex;
     align-items: center;
