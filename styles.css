@@ -112,8 +112,8 @@ section {
 section button {
     background: none;
     border: none;
-    font-size: 16px;
-    color: rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
     position: absolute;
     bottom: 10px;
@@ -121,7 +121,7 @@ section button {
     z-index: 2;
 }
 section button:hover {
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(0, 0, 0, 0.8);
 }
 .active {
     display: block;
