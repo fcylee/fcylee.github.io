@@ -58,6 +58,21 @@
         function hideSection(sectionId) {
             document.getElementById(sectionId).classList.remove("active");
         }
+        function toggleButton(buttonId, sectionId, file, elementId) {
+            let button = document.getElementById(buttonId);
+            if (button.textContent === "+") {
+                document.getElementById(sectionId).classList.add("active");
+                button.textContent = "-";
+                fetch(file)
+                .then(response => response.text())
+                .then(data => document.getElementById(elementId).innerHTML = data)
+                .catch(error => console.error(`Error loading ${file}:`, error));
+
+            } else {
+                document.getElementById(sectionId).classList.remove("active");
+                button.textContent = "+";
+            }
+        }
         const photos = ["images/flora_1.jpg", "images/flora_2.jpg", "images/flora_3.jpg"];
         let photoIndex = 0;
 
