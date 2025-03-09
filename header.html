@@ -5,12 +5,12 @@
     <div class="nav" id="nav-links">
         <button onclick="loadHTML('/about.html', 'content')">About Me</button>
         <button onclick="loadHTML('/research.html', 'content')">Research Interests</button>
-        <button onclick="loadHTML('/publications.html', 'content')">Publications</button>
+        <button onclick="loadHTML('/publications.html', 'content'); loadPublications()">Publications</button>
     </div>
     <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
     <div id="mobile-menu" class="mobile-menu">
         <button onclick="loadHTML('/about.html', 'content'); toggleMenu()">About Me</button>
         <button onclick="loadHTML('/research.html', 'content'); toggleMenu()">Research Interests</button>
-        <button onclick="loadHTML('/publications.html', 'content'); toggleMenu()">Publications</button>
+        <button onclick="loadHTML('/publications.html', 'content'); loadPublications(); toggleMenu()">Publications</button>
     </div>
 </header>
