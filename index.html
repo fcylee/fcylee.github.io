@@ -3,7 +3,7 @@
 <head>
     <meta property="og:title" content="FCYLee::RNA::Synapse">
     <meta property="og:description" content="Local RNA metabolism meets synapse (dys)function">
-    <meta property="og:image" content="https://fcylee.github.io/images/logo.png">
+    <meta property="og:image" content="https://fcylee.github.io/apple-touch-icon.png">
     <meta property="og:url" content="https://fcylee.github.io/">
     <meta property="og:type" content="website">
     <meta charset="UTF-8">
@@ -94,8 +94,11 @@
             updatePhotoDisplay();
         }
         async function loadPublications() {
+            console.log("📚 loadPublications() is running..."); //Debugging
             try {
-                const response = await fetch('publications.bib');
+                const response = await fetch('/publications.bib');
+                if (!response.ok) throw new Error("Failed to fetch BibTeX file.");
+        
                 const bibtexText = await response.text();
                 const publications = bibtexParse.toJSON(bibtexText);
                 const pubList = document.getElementById("publications-list");
@@ -103,33 +106,35 @@
                 pubList.innerHTML = ""; // Clear previous content
 
                 publications.forEach(pub => {
-                    const entry = pub.entryTags;
+                    const entry = pub.entryTags || {};
                     const listItem = document.createElement("li");
 
-                    // Extract relevant fields
+                    // Extract relevant fields with fallbacks
                     const title = entry.title || "Untitled";
                     const authors = entry.author || "Unknown Authors";
                     const year = entry.year ? `(${entry.year})` : "";
-                    const journal = entry.journal || entry.booktitle || "No journal/conference";
+                    const journalOrConference = entry.journal || entry.booktitle || "No journal/conference";
                     const doi = entry.doi ? `<a href="https://doi.org/${entry.doi}" target="_blank">DOI</a>` : "";
                     const url = entry.url ? `<a href="${entry.url}" target="_blank">Full Text</a>` : "";
 
                     // Format the publication entry
                     listItem.innerHTML = `
-                        <strong>${title}</strong> <br>
-                        ${authors} ${year} <br>
-                        <em>${journal}</em> <br>
-                        ${doi} ${url}
+                        <div class="publication-item">
+                            <strong class="pub-title">${title}</strong>
+                            <p class="pub-authors">${authors} ${year}</p>
+                            <p class="pub-journal"><em>${journalOrConference}</em></p>
+                            <p class="pub-links">${doi} ${url}</p>
+                        </div>
                     `;
 
                     pubList.appendChild(listItem);
                 });
             } catch (error) {
                 console.error("Error loading publications:", error);
+                document.getElementById("publications-list").innerHTML = "<li>Error loading publications.</li>";
             }
         }
     window.addEventListener("resize", handleResize);
-    document.addEventListener("DOMContentLoaded", loadPublications);
     </script>
 </body>
 </html>

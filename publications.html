@@ -1,4 +1,51 @@
 <h2>Publications</h2>
 <p>Full publication list can be found here: <a href="https://scholar.google.com/citations?user=xcTS8NkAAAAJ&hl=en" target="_blank">Google Scholar</a></p>
-<h3>Highlights</h3>
-<ul id="publications-list"></ul>
+<section id="pubhighlights" class="pubhighlights">
+    <h3>Highlights</h3>
+    <ul id="publications-list" class="publist"></ul>
+</section>
+<script>
+    async function loadPublications() {
+            console.log("📚 loadPublications() is running..."); //Debugging
+            try {
+                const response = await fetch('/publications.bib');
+                if (!response.ok) throw new Error("Failed to fetch BibTeX file.");
+        
+                const bibtexText = await response.text();
+                const publications = bibtexParse.toJSON(bibtexText);
+                const pubList = document.getElementById("publications-list");
+
+                pubList.innerHTML = ""; // Clear previous content
+
+                publications.forEach(pub => {
+                    const entry = pub.entryTags || {};
+                    const listItem = document.createElement("li");
+
+                    // Extract relevant fields with fallbacks
+                    const title = entry.title || "Untitled";
+                    const authors = entry.author || "Unknown Authors";
+                    const year = entry.year ? `(${entry.year})` : "";
+                    const journalOrConference = entry.journal || entry.booktitle || "No journal/conference";
+                    const doi = entry.doi ? `<a href="https://doi.org/${entry.doi}" target="_blank">DOI</a>` : "";
+                    const url = entry.url ? `<a href="${entry.url}" target="_blank">Full Text</a>` : "";
+
+                    // Format the publication entry
+                    listItem.innerHTML = `
+                        <div class="publication-item">
+                            <strong class="pub-title">${title}</strong>
+                            <p class="pub-authors">${authors} ${year}</p>
+                            <p class="pub-journal"><em>${journalOrConference}</em></p>
+                            <p class="pub-links">${doi} ${url}</p>
+                        </div>
+                    `;
+
+                    pubList.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error("Error loading publications:", error);
+                document.getElementById("publications-list").innerHTML = "<li>Error loading publications.</li>";
+            }
+        }
+    document.addEventListener("DOMContentLoaded", loadPublications);
+    document.getElementById("content").onload(loadPublications);
+</script>

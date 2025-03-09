@@ -1,0 +1,325 @@
+[
+  {
+    "_id": "75facd8f-edff-009a-9653-872b3556d179",
+    "author": [
+      {
+        "first": "Anob M",
+        "last": "Chakrabarti",
+        "initials": "AM",
+        "formatted": "Chakrabarti AM"
+      },
+      {
+        "first": "Ira A",
+        "last": "Iosub",
+        "initials": "IA",
+        "formatted": "Iosub IA"
+      },
+      {
+        "first": "Flora C Y",
+        "last": "Lee",
+        "initials": "FCY",
+        "formatted": "Lee FCY"
+      },
+      {
+        "first": "Jernej",
+        "last": "Ule",
+        "initials": "J",
+        "formatted": "Ule J"
+      },
+      {
+        "first": "Nicholas M",
+        "last": "Luscombe",
+        "initials": "NM",
+        "formatted": "Luscombe NM"
+      }
+    ],
+    "autoCleaned": 1,
+    "citekey": "Chakrabarti2023-ld",
+    "created": 1741547676.9929998,
+    "dup_sha1": "2152162504a611c1dc6d177f1ffa9536d1d68677",
+    "folders": [
+      "abb9e2f6-d6b9-06e1-8d93-0baedb19177a"
+    ],
+    "foldersNamed": [
+      "FCYL"
+    ],
+    "id_list": [
+      "sha1:c31935cf52f659a479134e1b75a8e2dd79a5c6a6",
+      "dup_sha1:2152162504a611c1dc6d177f1ffa9536d1d68677"
+    ],
+    "incomplete": 0,
+    "issue": "8",
+    "journal": "Nucleic Acids Research",
+    "labels": [],
+    "original_citekey": "chakrabarti2023computationally",
+    "owner": "34D9BEE89B0B11E8ABA6C72DEFF500C0",
+    "pages": "3573-3589",
+    "published": {
+      "year": "2023"
+    },
+    "publisher": "Oxford University Press",
+    "pubtype": "PP_ARTICLE",
+    "sha1": "c31935cf52f659a479134e1b75a8e2dd79a5c6a6",
+    "subfolders": [
+      "All Papers/C"
+    ],
+    "title": "A computationally-enhanced hiCLIP atlas reveals Staufen1-RNA binding features and links 3′ UTR structure to RNA metabolism",
+    "volume": "51"
+  },
+  {
+    "_id": "d893db3f-05f8-0a80-ad3b-b580f2efd164",
+    "author": [
+      {
+        "first": "Flora C Y",
+        "last": "Lee",
+        "initials": "FCY",
+        "formatted": "Lee FCY"
+      },
+      {
+        "first": "Anob M",
+        "last": "Chakrabarti",
+        "initials": "AM",
+        "formatted": "Chakrabarti AM"
+      },
+      {
+        "first": "Heike",
+        "last": "Hänel",
+        "initials": "H",
+        "formatted": "Hänel H"
+      },
+      {
+        "first": "Elisa",
+        "last": "Monzón-Casanova",
+        "initials": "E",
+        "formatted": "Monzón-Casanova E"
+      },
+      {
+        "first": "Martina",
+        "last": "Hallegger",
+        "initials": "M",
+        "formatted": "Hallegger M"
+      },
+      {
+        "first": "Cristina",
+        "last": "Militti",
+        "initials": "C",
+        "formatted": "Militti C"
+      },
+      {
+        "first": "Federica",
+        "last": "Capraro",
+        "initials": "F",
+        "formatted": "Capraro F"
+      },
+      {
+        "first": "Christoph",
+        "last": "Sadée",
+        "initials": "C",
+        "formatted": "Sadée C"
+      },
+      {
+        "first": "Patrick",
+        "last": "Toolan-Kerr",
+        "initials": "P",
+        "formatted": "Toolan-Kerr P"
+      },
+      {
+        "first": "Oscar",
+        "last": "Wilkins",
+        "initials": "O",
+        "formatted": "Wilkins O"
+      },
+      {
+        "last": "Others",
+        "initials": "",
+        "formatted": "Others",
+        "first": ""
+      }
+    ],
+    "autoCleaned": 1,
+    "citekey": "Lee2021-zj",
+    "created": 1741547676.9899998,
+    "dup_sha1": "55b0a3ed6192cc9c1e9432805fac991298021880",
+    "folders": [
+      "abb9e2f6-d6b9-06e1-8d93-0baedb19177a"
+    ],
+    "foldersNamed": [
+      "FCYL"
+    ],
+    "id_list": [
+      "sha1:2a2228d3ce30cf5eb30cc680117f053b80be05ea",
+      "dup_sha1:55b0a3ed6192cc9c1e9432805fac991298021880"
+    ],
+    "incomplete": 0,
+    "journal": "bioRxiv",
+    "labels": [],
+    "original_citekey": "lee2021improved",
+    "owner": "34D9BEE89B0B11E8ABA6C72DEFF500C0",
+    "pages": "2021-2008",
+    "pub_id": "7411ac95-6a4f-0928-94bc-989fa615b332",
+    "published": {
+      "year": "2021"
+    },
+    "publisher": "Cold Spring Harbor Laboratory",
+    "pubtype": "PP_ARTICLE",
+    "sha1": "2a2228d3ce30cf5eb30cc680117f053b80be05ea",
+    "subfolders": [
+      "All Papers/L"
+    ],
+    "title": "An improved iCLIP protocol"
+  },
+  {
+    "_id": "3b0f484b-64f2-0812-90b2-2e6430e95f5e",
+    "author": [
+      {
+        "first": "Martina",
+        "last": "Hallegger",
+        "initials": "M",
+        "formatted": "Hallegger M"
+      },
+      {
+        "first": "Anob M",
+        "last": "Chakrabarti",
+        "initials": "AM",
+        "formatted": "Chakrabarti AM"
+      },
+      {
+        "first": "Flora C Y",
+        "last": "Lee",
+        "initials": "FCY",
+        "formatted": "Lee FCY"
+      },
+      {
+        "first": "Bo Lim",
+        "last": "Lee",
+        "initials": "BL",
+        "formatted": "Lee BL"
+      },
+      {
+        "first": "Aram G",
+        "last": "Amalietti",
+        "initials": "AG",
+        "formatted": "Amalietti AG"
+      },
+      {
+        "first": "Hana M",
+        "last": "Odeh",
+        "initials": "HM",
+        "formatted": "Odeh HM"
+      },
+      {
+        "first": "Katie E",
+        "last": "Copley",
+        "initials": "KE",
+        "formatted": "Copley KE"
+      },
+      {
+        "first": "Jack D",
+        "last": "Rubien",
+        "initials": "JD",
+        "formatted": "Rubien JD"
+      },
+      {
+        "first": "Bede",
+        "last": "Portz",
+        "initials": "B",
+        "formatted": "Portz B"
+      },
+      {
+        "first": "Klara",
+        "last": "Kuret",
+        "initials": "K",
+        "formatted": "Kuret K"
+      },
+      {
+        "last": "Others",
+        "initials": "",
+        "formatted": "Others",
+        "first": ""
+      }
+    ],
+    "autoCleaned": 1,
+    "citekey": "Hallegger2021-qt",
+    "created": 1741547676.9889998,
+    "dup_sha1": "fdd6cb21773158e6f89ad2da956fa90d7f3fddb7",
+    "folders": [
+      "abb9e2f6-d6b9-06e1-8d93-0baedb19177a"
+    ],
+    "foldersNamed": [
+      "FCYL"
+    ],
+    "id_list": [
+      "sha1:f88c3491ec86f1357cc3f0c1990fb3cd366c5941",
+      "dup_sha1:fdd6cb21773158e6f89ad2da956fa90d7f3fddb7"
+    ],
+    "incomplete": 0,
+    "issue": "18",
+    "journal": "Cell",
+    "labels": [],
+    "original_citekey": "hallegger2021tdp",
+    "owner": "34D9BEE89B0B11E8ABA6C72DEFF500C0",
+    "pages": "4680-4696",
+    "pub_id": "108075d6-9adf-0e6b-b67d-0e5df5e698fa",
+    "published": {
+      "year": "2021"
+    },
+    "publisher": "Cell Press",
+    "pubtype": "PP_ARTICLE",
+    "sha1": "f88c3491ec86f1357cc3f0c1990fb3cd366c5941",
+    "subfolders": [
+      "All Papers/H"
+    ],
+    "title": "TDP-43 condensation properties specify its RNA-binding and regulatory repertoire",
+    "volume": "184"
+  },
+  {
+    "_id": "12b0cc76-e2aa-0196-944f-586771b00ca4",
+    "author": [
+      {
+        "first": "Flora C Y",
+        "last": "Lee",
+        "initials": "FCY",
+        "formatted": "Lee FCY"
+      },
+      {
+        "first": "Jernej",
+        "last": "Ule",
+        "initials": "J",
+        "formatted": "Ule J"
+      }
+    ],
+    "autoCleaned": 1,
+    "citekey": "Lee2018-hn",
+    "created": 1741547676.984,
+    "dup_sha1": "efaf6d6a26f18a67438855f058307aef0183762e",
+    "folders": [
+      "abb9e2f6-d6b9-06e1-8d93-0baedb19177a"
+    ],
+    "foldersNamed": [
+      "FCYL"
+    ],
+    "id_list": [
+      "sha1:138e7d40ac4d0ab33770234c4269c8243260446d",
+      "dup_sha1:efaf6d6a26f18a67438855f058307aef0183762e"
+    ],
+    "incomplete": 0,
+    "issue": "3",
+    "journal": "Molecular Cell",
+    "labels": [],
+    "original_citekey": "lee2018advances",
+    "owner": "34D9BEE89B0B11E8ABA6C72DEFF500C0",
+    "pages": "354-369",
+    "pub_id": "b2b3bf6d-f726-0d7b-a1d3-53ae57af00c9",
+    "published": {
+      "year": "2018"
+    },
+    "publisher": "Elsevier",
+    "pubtype": "PP_ARTICLE",
+    "sha1": "138e7d40ac4d0ab33770234c4269c8243260446d",
+    "subfolders": [
+      "All Papers/L"
+    ],
+    "title": "Advances in CLIP Technologies for Studies of Protein-RNA Interactions",
+    "volume": "69"
+  }
+]

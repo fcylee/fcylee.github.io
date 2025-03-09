@@ -243,6 +243,38 @@ section button:hover {
 .research-box button:hover {
     color: rgba(0, 0, 0, 0.6);
 }
+.pubhighlights {
+    display: block;
+    max-width: 800px;
+}
+.publist {
+    list-style-type: none
+}
+.publication-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.pub-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.pub-authors, .pub-journal {
+    font-size: 14px;
+    color: #555;
+}
+
+.pub-links a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #0077cc;
+}
+
+.pub-links a:hover {
+    text-decoration: underline;
+}
 @media (max-width: 768px) {
     .nav {
         display: none; /* Hide normal nav */
@@ -256,6 +288,11 @@ section button:hover {
     }
     .research-container {
         flex-direction: column;
+        justify-content: center;
+    }
+    .research-box {
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 .social-links a {
