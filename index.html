@@ -93,7 +93,11 @@
             photoIndex = (photoIndex + 1) % photos.length;
             updatePhotoDisplay();
         }
+        function delay(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
         async function loadPublications() {
+            await delay(500);
             console.log("📚 loadPublications() is running..."); //Debugging
             try {
                 const response = await fetch('/publications.bib');

@@ -6,6 +6,7 @@
 </section>
 <script>
     async function loadPublications() {
+            await delay(500);
             console.log("📚 loadPublications() is running..."); //Debugging
             try {
                 const response = await fetch('/publications.bib');
@@ -47,5 +48,4 @@
             }
         }
     document.addEventListener("DOMContentLoaded", loadPublications);
-    document.getElementById("content").onload(loadPublications);
 </script>
