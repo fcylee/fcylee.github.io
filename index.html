@@ -24,8 +24,7 @@
     <header id="header"></header>
     <div class="container">
         <h1>Local RNA metabolism meets synapse (dys)function</h1>
-        <h2>Flora Lee's Scientific Home Page</h2>
-        <p>website under construction</p>
+        <h2>Flora Lee's Scientific Page</h2>
     </div>
     <section id="content" class="active"></section>
     <footer id="footer"></footer>
@@ -97,7 +96,7 @@
             return new Promise(resolve => setTimeout(resolve, ms));
         }
         async function loadPublications() {
-            await delay(500);
+            await delay(10);
             console.log("📚 loadPublications() is running..."); //Debugging
             try {
                 const response = await fetch('/publications.bib');

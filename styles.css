@@ -248,7 +248,7 @@ section button:hover {
     max-width: 800px;
 }
 .publist {
-    list-style-type: none
+    list-style-type: none;
 }
 .publication-item {
     margin-bottom: 15px;
