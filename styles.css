@@ -31,7 +31,7 @@ header {
     justify-content: center;
     align-items: center;
     padding: 10px 20px;
-    background: #42A4A1; /* Restored original greenish-blue color */
+    background: #42A4A1; 
     color: white;
     height: 50px;
     z-index: 1000;
@@ -125,6 +125,13 @@ section button {
 section button:hover {
     color: rgba(0, 0, 0, 0.8);
 }
+section a {
+    text-decoration: none;
+    color: #3A53A4;
+}
+section a:hover {
+    text-decoration: underline;
+}
 .active-white {
     display: block;
     background: rgba(255, 255, 255, 0.1);
@@ -216,7 +223,7 @@ section button:hover {
     font-weight: bold;
     padding: 20px;
     background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     background-size: cover;
     background-position: bottom;
     position: relative;
@@ -235,6 +242,8 @@ section button:hover {
 .research-box h3, .research-box p{
     position: relative;
     z-index: 2;
+    font-weight: lighter;
+    font-size: 20px;
 } 
 .research-box button{
     background: none;
@@ -266,6 +275,7 @@ section button:hover {
 .pub-title {
     font-size: 18px;
     font-weight: bold;
+    color:#3A53A4
 }
 
 .pub-authors, .pub-journal {
@@ -276,7 +286,7 @@ section button:hover {
 .pub-links a {
     margin-right: 10px;
     text-decoration: none;
-    color: #0077cc;
+    color: #3A53A4;
 }
 
 .pub-links a:hover {
@@ -308,6 +318,9 @@ section button:hover {
     color: #42A4A1;
     font-weight: bold;
     font-size: 20px;
+}
+.social-links a:hover{
+    text-decoration: underline;
 }
 .social-links a i {
     margin-right: 5px;
