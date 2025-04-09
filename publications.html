@@ -5,6 +5,10 @@
     <ul id="publications-list" class="publist"></ul>
 </section>
 <script>
+    if (window.top === window.self) {
+        // Page is being viewed directly — redirect to homepage
+        window.location.href = "/";
+    }
     async function loadPublications() {
             await delay(10);
             console.log("📚 loadPublications() is running..."); //Debugging
