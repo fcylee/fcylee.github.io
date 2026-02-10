@@ -3,3 +3,6 @@ docs/
 
 # Ignore CLAUDE.md
 CLAUDE.md
+
+# Ignore MCP screenshots
+mcp-screenshots/

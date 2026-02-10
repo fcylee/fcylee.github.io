@@ -2,21 +2,24 @@
 <p> My current research combines long-standing interests in RNA biology and developmental neurobiology, funded by my <a href="https://wellcome.org/grant-funding/people-and-projects/grants-awarded/synaptic-mrna-dysregulation-neurodevelopmental" target="_blank">Wellcome Trust Early Career Award</a> and sponsored by the <a href="https://www.kcl.ac.uk/people/laura-andreae" target="_blank">Andreae</a> Lab. </p>
 <p>I aim to uncover the regulatory code of synapse-localised RNA metabolism, how this changes throughout neuronal development and under homeostatic mechanisms, as well as their contribution to synaptic dysfunction in disease models.</p>
 <div class="research-container">
-    <div class="research-box" style="background-image: url('images/research_1.jpg'); box-shadow: 0 2px 4px #94000A80">
-        <h3>Molecular neighbourhoods of localised mRNAs and their regulatory code</h3>
-        <button style="font-size: 24px" id="button-re1" onclick="toggleButton('button-re1', 'research-expanded1','/research_neighbourhoods.html', 'research-expanded1')">&#43;</button>
+    <div class="research-link" onclick="loadHTML('/research-details.html', 'content'); setTimeout(() => document.getElementById('neighbourhoods').scrollIntoView({behavior: 'smooth', block: 'start'}), 100);">
+        <div class="research-box light-image" style="background-image: url('images/research_1.jpg')">
+            <h3>Molecular neighbourhoods of localised mRNAs and their regulatory code</h3>
+            <span class="learn-more">Learn More →</span>
+        </div>
     </div>
-    <section id="research-expanded1" style="max-width: 500px; background: #FA74771A; box-shadow: 0 2px 4px #94000A80"></section>
-    <div class="research-box" style="background-image: url('images/research_3.jpg'); box-shadow: 0 2px 4px #7A350080">
-        <h3>Synaptic mRNA signatures in neurodevelopmental disorder risk gene models</h3>
-        <button style="font-size: 24px" id="button-re2" onclick="toggleButton('button-re2', 'research-expanded2','/research_ndd.html', 'research-expanded2')">&#43;</button>
+    <div class="research-link" onclick="loadHTML('/research-details.html', 'content'); setTimeout(() => document.getElementById('ndd').scrollIntoView({behavior: 'smooth', block: 'start'}), 100);">
+        <div class="research-box dark-image" style="background-image: url('images/research_3.jpg')">
+            <h3>Synaptic mRNA signatures in neurodevelopmental disorder risk gene models</h3>
+            <span class="learn-more">Learn More →</span>
+        </div>
     </div>
-    <section id="research-expanded2" style="max-width: 500px; background: #DE8C001A; box-shadow: 0 2px 4px #7A350080"></section>
-    <div class="research-box" style="background-image: url('images/research_2.jpg'); box-shadow: 0 2px 4px #57490080">
-        <h3>Methodologies for studying mRNP assembly principles</h3>
-        <button style="font-size: 24px" id="button-re3" onclick="toggleButton('button-re3', 'research-expanded3','/research_rnp.html', 'research-expanded3')">&#43;</button>
+    <div class="research-link" onclick="loadHTML('/research-details.html', 'content'); setTimeout(() => document.getElementById('rnp').scrollIntoView({behavior: 'smooth', block: 'start'}), 100);">
+        <div class="research-box light-image" style="background-image: url('images/research_2.jpg')">
+            <h3>Methodologies for studying mRNP assembly principles</h3>
+            <span class="learn-more">Learn More →</span>
+        </div>
     </div>
-    <section id="research-expanded3" style="max-width: 500px; background: #B1A1001A; box-shadow: 0 2px 4px #57490080"></section>
 </div>
 </section>
 <section id="collab" class="active">
