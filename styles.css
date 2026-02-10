@@ -209,7 +209,9 @@ section {
     padding: 40px 48px;
     border-radius: 0;
     background: transparent;
+    width: 100%;
     max-width: 900px;
+    box-sizing: border-box;
     position: relative;
     transition: all 0.3s ease;
 }

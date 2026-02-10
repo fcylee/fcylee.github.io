@@ -13,6 +13,7 @@
             </div>
         </div>
         <button onclick="loadHTML('/publications.html', 'content'); loadPublications()">Publications</button>
+        <button onclick="loadHTML('/software.html', 'content')">Software</button>
     </div>
     <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
     <div id="mobile-menu" class="mobile-menu">
@@ -22,5 +23,6 @@
         <button class="mobile-sub" onclick="loadHTML('/research-details.html', 'content'); setTimeout(() => document.getElementById('ndd').scrollIntoView({behavior: 'smooth', block: 'start'}), 100); toggleMenu();">— Synaptic mRNA in NDDs</button>
         <button class="mobile-sub" onclick="loadHTML('/research-details.html', 'content'); setTimeout(() => document.getElementById('rnp').scrollIntoView({behavior: 'smooth', block: 'start'}), 100); toggleMenu();">— mRNP assembly methods</button>
         <button onclick="loadHTML('/publications.html', 'content'); loadPublications(); toggleMenu()">Publications</button>
+        <button onclick="loadHTML('/software.html', 'content'); toggleMenu()">Software</button>
     </div>
 </header>
