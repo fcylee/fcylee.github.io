@@ -4,13 +4,23 @@
     </div>
     <div class="nav" id="nav-links">
         <button onclick="loadHTML('/about.html', 'content')">About Me</button>
-        <button onclick="loadHTML('/research.html', 'content')">Research Interests</button>
+        <div class="nav-dropdown">
+            <button onclick="loadHTML('/research.html', 'content')">Research</button>
+            <div class="nav-dropdown-menu">
+                <button onclick="loadHTML('/research-details.html', 'content'); setTimeout(() => document.getElementById('neighbourhoods').scrollIntoView({behavior: 'smooth', block: 'start'}), 100);">Molecular neighbourhoods</button>
+                <button onclick="loadHTML('/research-details.html', 'content'); setTimeout(() => document.getElementById('ndd').scrollIntoView({behavior: 'smooth', block: 'start'}), 100);">Synaptic mRNA in NDDs</button>
+                <button onclick="loadHTML('/research-details.html', 'content'); setTimeout(() => document.getElementById('rnp').scrollIntoView({behavior: 'smooth', block: 'start'}), 100);">mRNP assembly methods</button>
+            </div>
+        </div>
         <button onclick="loadHTML('/publications.html', 'content'); loadPublications()">Publications</button>
     </div>
     <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
     <div id="mobile-menu" class="mobile-menu">
         <button onclick="loadHTML('/about.html', 'content'); toggleMenu()">About Me</button>
-        <button onclick="loadHTML('/research.html', 'content'); toggleMenu()">Research Interests</button>
+        <button onclick="loadHTML('/research.html', 'content'); toggleMenu()">Research</button>
+        <button class="mobile-sub" onclick="loadHTML('/research-details.html', 'content'); setTimeout(() => document.getElementById('neighbourhoods').scrollIntoView({behavior: 'smooth', block: 'start'}), 100); toggleMenu();">— Molecular neighbourhoods</button>
+        <button class="mobile-sub" onclick="loadHTML('/research-details.html', 'content'); setTimeout(() => document.getElementById('ndd').scrollIntoView({behavior: 'smooth', block: 'start'}), 100); toggleMenu();">— Synaptic mRNA in NDDs</button>
+        <button class="mobile-sub" onclick="loadHTML('/research-details.html', 'content'); setTimeout(() => document.getElementById('rnp').scrollIntoView({behavior: 'smooth', block: 'start'}), 100); toggleMenu();">— mRNP assembly methods</button>
         <button onclick="loadHTML('/publications.html', 'content'); loadPublications(); toggleMenu()">Publications</button>
     </div>
 </header>
