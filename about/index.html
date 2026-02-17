@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta property="og:title" content="About | FCYLee">
+    <meta property="og:description" content="About Flora Chi Yan Lee — RNA biology and neuroscience researcher">
+    <meta property="og:image" content="https://fcylee.github.io/images/logo.png">
+    <meta property="og:url" content="https://fcylee.github.io/about">
+    <meta property="og:type" content="website">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | FCYLee::RNA::Synapse</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/shared.js" defer></script>
+</head>
+<body>
+    <header id="header"></header>
+    <div class="container">
+        <h1>Local RNA metabolism meets synapse (dys)function</h1>
+        <h2 style="color:#444;font-family:'Montserrat', sans-serif;">Flora Lee's Scientific Page</h2>
+    </div>
+    <main>
+        <section class="active-white">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <div class="photo-container">
+                    <img id="profile-photo" src="/images/flora_1.jpg" alt="">
+                    <div class="photo-buttons">
+                        <button onclick="prevPhoto()">&#9664;</button>
+                        <button onclick="nextPhoto()">&#9654;</button>
+                    </div>
+                    <div class="photo-indicators">
+                        <span class="active"></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>Flora grew up in Hong Kong and Canada, and arrived in the United Kingdom at 17 for undergraduate studies (BA Natural Sciences). Her first interdisciplinary research experience was in the lab of Prof. Christine Holt at Cambridge during her third year project, where she looked at a miRNA important in axon guidance. Moving to London, Flora was a Wellcome Trust Neuroscience PhD student at University College London and The Francis Crick Institute under the mentorship of Prof. Jernej Ule.</p>
+                    <p>Flora is currently pursuing her fellowship project sponsored by Prof. Laura Andreae in the MRC Centre of Neurodevleopmental Disorders, King's College London.</p>
+                    <p>She enjoys going to concerts, trying new restaurants, watching youtube videos for recipe inspirations and strives to stay free of back/hip/knee/ankle pain by keeping up with exercise.</p>
+                </div>
+            </div>
+            <div class="social-links">
+                <p>Email: flora_chi_yan.lee(at)kcl.ac.uk</p>
+                <p>Connect with me:</p>
+                <a href="https://www.linkedin.com/in/floracylee/" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+                <a href="https://x.com/fcylee" target="_blank"><i class="fa-brands fa-twitter"></i>Twitter</a>
+                <a href="https://github.com/fcylee" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
+                <a href="https://scholar.google.com/citations?user=xcTS8NkAAAAJ&hl=en" target="_blank"><i class="fa-brands fa-google-scholar"></i>Google Scholar</a>
+                <a href="https://devneuro.org/cdn/people-detail.php?personID=2335" target="_blank"><i class="fa-solid fa-briefcase"></i>KCL Profile</a>
+            </div>
+        </section>
+    </main>
+    <footer id="footer"></footer>
+
+    <script>
+        const photos = ["/images/flora_1.jpg", "/images/flora_2.jpg", "/images/flora_3.jpg"];
+        let photoIndex = 0;
+
+        function updatePhotoDisplay() {
+            document.getElementById("profile-photo").src = photos[photoIndex];
+            const indicators = document.querySelectorAll(".photo-indicators span");
+            indicators.forEach((dot, index) => {
+                dot.classList.toggle("active", index === photoIndex);
+            });
+        }
+
+        function prevPhoto() {
+            photoIndex = (photoIndex - 1 + photos.length) % photos.length;
+            updatePhotoDisplay();
+        }
+
+        function nextPhoto() {
+            photoIndex = (photoIndex + 1) % photos.length;
+            updatePhotoDisplay();
+        }
+    </script>
+</body>
+</html>
