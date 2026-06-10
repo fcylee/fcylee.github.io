@@ -22,13 +22,15 @@
 </head>
 <body>
     <header id="header"></header>
-    <div class="container">
-        <h1>Local RNA metabolism meets synapse (dys)function</h1>
-        <h2 style="color:#444;font-family:'Montserrat', sans-serif;">Flora Lee's Scientific Page</h2>
+    <div class="hero-banner">
+        <div class="hero-banner-inner">
+            <h1>Local RNA metabolism meets synapse (dys)function</h1>
+            <hr class="hero-rule">
+            <p class="hero-banner-byline">Publications</p>
+        </div>
     </div>
     <main>
         <section class="active-white">
-            <h2>Publications</h2>
             <p>Full publication list can be found here: <a href="https://scholar.google.com/citations?user=xcTS8NkAAAAJ&hl=en" target="_blank">Google Scholar</a></p>
             <div id="pubhighlights" class="pubhighlights">
                 <h3>Selected Publications</h3>
@@ -39,42 +41,63 @@
     <footer id="footer"></footer>
 
     <script>
+        function formatAuthors(raw) {
+            if (!raw) return "Unknown authors";
+            return raw.split(/\s+and\s+/).map(part => {
+                let name = part.trim();
+                if (/^others$/i.test(name)) return "et al.";
+                // Highlight Flora's name in any of its forms
+                if (/^lee,\s*flora/i.test(name)) {
+                    name = "<strong>" + name + "</strong>";
+                }
+                return name;
+            }).join(", ");
+        }
+
+        // Theme groups, in display order
+        const PUB_GROUPS = [
+            { key: "methods", title: "Method development" },
+            { key: "condensation", title: "Protein–RNA interactions & condensation" },
+            { key: "localrna", title: "Local RNA regulation & translation" },
+        ];
+
+        function renderItem(entry) {
+            const title = entry.title || "Untitled";
+            const authors = formatAuthors(entry.author || "");
+            const year = entry.year || "";
+            const journal = entry.journal || entry.booktitle || "";
+            const note = entry.note ? `<span class="pub-note">${entry.note}</span>` : "";
+            const doi = entry.doi ? `<a href="https://doi.org/${entry.doi}" target="_blank">DOI</a>` : "";
+            const url = entry.url ? `<a href="${entry.url}" target="_blank">Full Text</a>` : "";
+            return `
+                <li class="publication-item">
+                    <p class="pub-title">${title}</p>
+                    <p class="pub-meta">${authors} <span class="pub-year">${year}</span> &middot; <em>${journal}</em> ${doi}${url ? " " + url : ""}</p>
+                    ${note}
+                </li>`;
+        }
+
         async function loadPublications() {
+            const pubList = document.getElementById("publications-list");
             try {
                 const response = await fetch('/publications.bib');
                 if (!response.ok) throw new Error("Failed to fetch BibTeX file.");
 
-                const bibtexText = await response.text();
-                const publications = bibtexParse.toJSON(bibtexText);
-                const pubList = document.getElementById("publications-list");
+                const publications = bibtexParse.toJSON(await response.text());
+                let html = "";
 
-                pubList.innerHTML = "";
-
-                publications.forEach(pub => {
-                    const entry = pub.entryTags || {};
-                    const listItem = document.createElement("li");
-
-                    const title = entry.title || "Untitled";
-                    const authors = entry.author || "Unknown Authors";
-                    const year = entry.year ? `(${entry.year})` : "";
-                    const journalOrConference = entry.journal || entry.booktitle || "No journal/conference";
-                    const doi = entry.doi ? `<a href="https://doi.org/${entry.doi}" target="_blank">DOI</a>` : "";
-                    const url = entry.url ? `<a href="${entry.url}" target="_blank">Full Text</a>` : "";
-
-                    listItem.innerHTML = `
-                        <div class="publication-item">
-                            <strong class="pub-title">${title}</strong>
-                            <p class="pub-authors">${authors} ${year}</p>
-                            <p class="pub-journal"><em>${journalOrConference}</em></p>
-                            <p class="pub-links">${doi} ${url}</p>
-                        </div>
-                    `;
-
-                    pubList.appendChild(listItem);
+                PUB_GROUPS.forEach(group => {
+                    const items = publications.filter(p =>
+                        ((p.entryTags || {}).keywords || "").toLowerCase().includes(group.key));
+                    if (!items.length) return;
+                    html += `<li class="pub-group-header"><h4>${group.title}</h4></li>`;
+                    items.forEach(p => { html += renderItem(p.entryTags || {}); });
                 });
+
+                pubList.innerHTML = html || "<li>No publications found.</li>";
             } catch (error) {
                 console.error("Error loading publications:", error);
-                document.getElementById("publications-list").innerHTML = "<li>Error loading publications.</li>";
+                pubList.innerHTML = "<li>Error loading publications.</li>";
             }
         }
 

@@ -103,6 +103,8 @@ document.addEventListener("DOMContentLoaded", function () {
     Promise.all(promises).then(() => {
         highlightCurrentNav();
         handleFragmentScroll();
+        const yearEl = document.getElementById("year");
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
     });
 
     smartScroll();

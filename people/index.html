@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta property="og:title" content="People | FCYLee">
+    <meta property="og:description" content="Lab members and collaborators of Flora Chi Yan Lee">
+    <meta property="og:image" content="https://fcylee.github.io/images/logo.png">
+    <meta property="og:url" content="https://fcylee.github.io/people">
+    <meta property="og:type" content="website">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People | FCYLee::RNA::Synapse</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/shared.js" defer></script>
+</head>
+<body>
+    <header id="header"></header>
+    <div class="hero-banner">
+        <div class="hero-banner-inner">
+            <h1>Local RNA metabolism meets synapse (dys)function</h1>
+            <hr class="hero-rule">
+            <p class="hero-banner-byline">People</p>
+        </div>
+    </div>
+    <main>
+        <section class="active-white">
+            <h2>Lab</h2>
+            <div class="people-grid">
+                <div class="person-card">
+                    <img class="person-photo" src="/images/flora_1.jpg" alt="Flora Chi Yan Lee">
+                    <span class="person-name">Flora Chi Yan Lee <button type="button" class="expand" data-bio="bio-flora" aria-controls="bio-flora" aria-expanded="false" aria-label="Toggle bio for Flora Chi Yan Lee"></button></span>
+                    <span class="person-role">Wellcome Trust Early Career Fellow</span>
+                </div>
+                <div class="person-card">
+                    <span class="person-photo person-photo-placeholder"><i class="fa-solid fa-user"></i></span>
+                    <span class="person-name">Siaw Yuet Lim <button type="button" class="expand" data-bio="bio-siaw" aria-controls="bio-siaw" aria-expanded="false" aria-label="Toggle bio for Siaw Yuet Lim"></button></span>
+                    <span class="person-role">Research Assistant</span>
+                </div>
+            </div>
+            <div class="about-section" id="bio-flora" hidden>
+                <h3>About Flora</h3>
+                <p>Flora grew up in Hong Kong and Canada, and came to the UK at 17 for undergraduate studies (BA Natural Sciences). Her first interdisciplinary research was in the lab of Prof. Christine Holt at Cambridge, working on a miRNA in axon guidance. She then completed a Wellcome Trust Neuroscience PhD at University College London and The Francis Crick Institute under Prof. Jernej Ule, before starting her fellowship sponsored by Prof. Laura Andreae at the MRC Centre for Neurodevelopmental Disorders, King's College London. Outside the lab she enjoys concerts, trying new restaurants, and keeping active.</p>
+            </div>
+            <div class="about-section" id="bio-siaw" hidden>
+                <h3>About Siaw Yuet Lim</h3>
+                <p>Bio coming soon.</p>
+            </div>
+
+            <h2 style="margin-top:48px;">Ongoing Collaborations</h2>
+            <ul>
+                <li><a href="https://profiles.ucl.ac.uk/56783-anob-chakrabarti" target="_blank">Dr. Anob Chakrabarti</a> (UK)</li>
+                <li><a href="https://modiclab.org" target="_blank">Dr. Miha Modic</a> (Slovenia, Germany)</li>
+                <li><a href="https://web-f1.ijs.si/members/abozic/" target="_blank">Dr. Anže Božič</a> (Slovenia)</li>
+                <li><a href="https://julie-lin-lab.github.io/index.html" target="_blank">Dr. Julie Qiaojin Lin</a> (China)</li>
+                <li><a href="https://www.ulelab.info" target="_blank">Prof. Jernej Ule</a> (UK)</li>
+            </ul>
+        </section>
+    </main>
+    <footer id="footer"></footer>
+
+    <script>
+        document.querySelectorAll(".expand").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const section = document.getElementById(btn.dataset.bio);
+                if (!section) return;
+                const isOpen = !section.hidden;
+                section.hidden = isOpen;
+                btn.classList.toggle("open", !isOpen);
+                btn.setAttribute("aria-expanded", String(!isOpen));
+            });
+        });
+    </script>
+</body>
+</html>
