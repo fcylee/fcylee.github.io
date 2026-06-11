@@ -175,11 +175,22 @@ p {
 .expand:hover { background: rgba(37, 99, 235, 0.2); }
 .expand::before { content: "+"; }
 .expand.open::before { content: "\2212"; }
+/* hidden content sources — cloned into the drawer */
 .about-section {
-    margin-top: 36px;
+    display: none;
 }
-.about-section p {
+/* full-width drawer that opens beneath a person's row */
+.about-drawer {
+    flex-basis: 100%;
+    width: 100%;
+    margin: 8px 0 24px;
+}
+.about-drawer h3 {
+    margin: 0 0 12px;
+}
+.about-drawer p {
     line-height: 1.8;
+    margin: 0;
 }
 
 /* Theme-brand banner hero */
@@ -265,6 +276,18 @@ p {
     }
 }
 /* Person-brand hero variant */
+.hero-person-band {
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    background:
+        radial-gradient(120% 90% at 50% 0%,
+            rgba(37, 99, 235, 0.10) 0%,
+            rgba(8, 145, 178, 0.06) 38%,
+            rgba(255, 255, 255, 0) 72%);
+}
 .hero-person {
     max-width: 900px;
     width: 100%;
@@ -273,7 +296,7 @@ p {
     display: flex;
     align-items: center;
     gap: 48px;
-    background: linear-gradient(160deg, rgba(37, 99, 235, 0.06) 0%, rgba(8, 145, 178, 0.06) 50%, rgba(255, 255, 255, 0) 100%);
+    background: transparent;
 }
 .hero-person .hero-photo {
     width: 180px;
@@ -366,8 +389,8 @@ header {
 }
 .logo-container {
     position: absolute;
-    left: 20px;
-    top: 55%;
+    left: 9px;
+    top: 50%;
     transform: translateY(-50%);
 }
 .brand {

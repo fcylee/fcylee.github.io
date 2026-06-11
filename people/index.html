@@ -65,16 +65,53 @@
     <footer id="footer"></footer>
 
     <script>
-        document.querySelectorAll(".expand").forEach(btn => {
-            btn.addEventListener("click", () => {
-                const section = document.getElementById(btn.dataset.bio);
-                if (!section) return;
-                const isOpen = !section.hidden;
-                section.hidden = isOpen;
-                btn.classList.toggle("open", !isOpen);
-                btn.setAttribute("aria-expanded", String(!isOpen));
+        // Bio "drawer" that opens full-width beneath the row of the clicked person.
+        // Works as people wrap into multiple rows (and as single rows on mobile).
+        (function () {
+            const grid = document.querySelector(".people-grid");
+            if (!grid) return;
+            const drawer = document.createElement("div");
+            drawer.className = "about-drawer";
+            drawer.hidden = true;
+            let activeBtn = null;
+
+            function lastCardInRowOf(card) {
+                const cards = [...grid.querySelectorAll(".person-card")];
+                const top = card.offsetTop;
+                const sameRow = cards.filter(c => Math.abs(c.offsetTop - top) < 6);
+                return sameRow[sameRow.length - 1];
+            }
+            function open(btn) {
+                const card = btn.closest(".person-card");
+                const source = document.getElementById(btn.dataset.bio);
+                if (!source) return;
+                drawer.innerHTML = source.innerHTML;
+                lastCardInRowOf(card).after(drawer);
+                drawer.hidden = false;
+                btn.classList.add("open");
+                btn.setAttribute("aria-expanded", "true");
+                activeBtn = btn;
+            }
+            function close() {
+                drawer.hidden = true;
+                if (activeBtn) {
+                    activeBtn.classList.remove("open");
+                    activeBtn.setAttribute("aria-expanded", "false");
+                    activeBtn = null;
+                }
+            }
+            grid.querySelectorAll(".expand").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    if (activeBtn === btn) { close(); return; }
+                    if (activeBtn) close();
+                    open(btn);
+                });
             });
-        });
+            // keep the drawer under the right row if the layout reflows
+            window.addEventListener("resize", () => {
+                if (activeBtn) lastCardInRowOf(activeBtn.closest(".person-card")).after(drawer);
+            });
+        })();
     </script>
 </body>
 </html>
